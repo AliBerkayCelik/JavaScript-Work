@@ -1,36 +1,59 @@
-console.log("Merhaba Kodlama.io")
 
-//JS type safe değildir
-let dolarBugun = 9.30
+let student={id:1,name:"berkay"}
 
-let dolarDun = 9.20
-dolarDun = "9.20"
-{
-    let dolarDun = 9.10
+function save(ogrenci,sayi=10) {
+    // console.log(ogrenci.name+":"+sayi);
 }
 
-console.log(dolarDun)
+save(student,100);
 
-const euroDun = 11.2
-//euroDun = 11
+let students=["Engin Demiroğ","Halit Kalaycı","Engin Toprak","Büşra"]
 
-console.log(euroDun)
+// console.log(students)
 
-//array
-//camelCasing
-//PascalCasing
-let konutKredileri = ["Konut kredisi","Emlak Konut Kredisi","Kamu Konut Kredisi","Özel Konut Kredisi"]
+let sudents2=[student,{id:2,name:"Halit"},"Ankara",{city:"İstanbul"}]
+// console.log(sudents2);
 
-console.log("<ul>")
-for(let i = 0;i<konutKredileri.length;i++){
-    console.log("<li>"+konutKredileri[i]+"</li>")
+//rest
+//params
+//varArgs
+let showProducts=function name(id,...products){
+    console.log(id)
+    console.log(products[0])
 }
-console.log("</ul>")
 
-{/* <ul>
-    <li>Konut kredisi</li>
-    <li>Emlak Konut Kredisi</li>
-    <li>Kamu Konut Kredisi</li>
-</ul> */}
+// console.log(typeof showProducts);
+// showProducts(10,["Elma","Armut","Karpuz"])
 
-console.log(konutKredileri)
+
+//spred
+let points=[1,2,3,4,40,60,14]
+console.log(...points)
+console.log(Math.max(...points ))
+console.log(..."ABC","D",..."EFG","H")
+
+//Destructuring
+
+let populations=[10000,20000,30000,[40000,100000]]
+let [small,medium,high,[veryHigh,maxium]] =populations
+console.log(small)
+console.log(medium)
+console.log(high)
+console.log(veryHigh)
+console.log(maxium)
+
+function someFunction([small1],number){
+    console.log(small1)
+}
+
+someFunction(populations)
+
+
+let category={id:1,name:"içecek"}
+
+console.log(category.id)
+console.log(category["name"])
+
+let{id,name}=category
+console.log(id);
+console.log(name);
